@@ -1,2 +1,5 @@
 def hello():
-    return 'Hello, World!'
+    return {
+        'message': 'Hello, World!',
+        'description': 'A friendly greeting from Acme AI Labs orchestration system'
+    }
