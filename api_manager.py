@@ -20,7 +20,7 @@ class APIManager:
         
         try:
             self.process = subprocess.Popen(
-                ['python', 'api_server.py'],
+                ['python3', 'api_server.py'],
                 env={**os.environ, 'PORT': str(self.port)},
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE
