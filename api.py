@@ -1,5 +1,5 @@
 import jwt
-import datetime
+from datetime import datetime, timedelta, UTC
 from flask import Flask, request, jsonify
 from werkzeug.security import check_password_hash, generate_password_hash
 from functools import wraps
@@ -52,7 +52,7 @@ def login():
     
     token = jwt.encode({
         'user': username,
-        'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=24)
+        'exp': datetime.now(UTC) + timedelta(hours=24)
     }, app.config['SECRET_KEY'], algorithm='HS256')
     
     return jsonify({'token': token}), 200
